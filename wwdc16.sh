@@ -13,10 +13,10 @@ cat index.html | grep videos/play/wwdc2016 | grep h5 | sed -e 's/.*wwdc2016\///'
 
 rm index.html
 
-#Download dedicated webpages
+#Iterate through the talk IDs
 while read -r line
 do
-	#Download the page with the real download URL is the talk name
+	#Download the page with the real download URL and the talk name
 	wget -q "https://developer.apple.com/videos/play/wwdc2016/$line/" -O webpage
 
 	#We grab the title of the page then clean it up
